@@ -11,6 +11,12 @@ class PlansController extends AppController {
  *
  * @var mixed
  */
-	public $scaffold;
+//	public $scaffold;
+	public $helpers = array('Html', 'Form');
+	
+	public function index() {
+		$this->set('plans', $this->Plan->find('all'));
+		$this->set('title_for_layout', 'Plans Index');
+	}
 
 }
