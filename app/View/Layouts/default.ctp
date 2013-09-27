@@ -30,7 +30,11 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	<?php
 		echo $this->Html->meta('icon');
 
-		echo $this->Html->css('cake.generic');
+/*		echo $this->Html->css('cake.generic');*/
+		echo $this->Html->css('style');
+		if (Configure::read() > 0) {
+			echo $this->Html->css('cake.debug');
+		}
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
