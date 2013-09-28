@@ -8,8 +8,11 @@
 // echo h($plan['Plan']['title']);
 //
 echo $this->Html->link($plan['Plan']['title'], '/plans/view/'.$plan['Plan']['id']);
+?> 
+<?php echo $this->Html->link(' 編集', array('action'=>'edit', $plan['Plan']['id'])); ?> 
+<?php
+	echo $this->Form->postLink('削除', array('action'=>'delete', $plan['Plan']['id']), 	array('confirm'=>'sure?'));
 ?>
-<?php echo $this->Html->link(' 編集', array('action'=>'edit', $plan['Plan']['id'])); ?>
 </li>
 <?php endforeach; ?>
 </ul>

@@ -47,6 +47,16 @@ class PlansController extends AppController {
 			}
 		}
 	}
+	
+	public function delete($id) {
+		if ($this->request->is('get')) {
+			throw new MethodNotAllowedException();
+		}
+		if ($this->Plan->delete($id)) {
+			$this->Session->setFlash('Deleted!');
+			$this->redirect(array('action'=>'index'));
+		}
+	}
 
 
 }
