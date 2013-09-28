@@ -9,6 +9,7 @@
 //
 echo $this->Html->link($plan['Plan']['title'], '/plans/view/'.$plan['Plan']['id']);
 ?>
+<?php echo $this->Html->link(' 編集', array('action'=>'edit', $plan['Plan']['id'])); ?>
 </li>
 <?php endforeach; ?>
 </ul>

@@ -34,5 +34,19 @@ class PlansController extends AppController {
 			}
 		}
 	}
+	public function edit($id = null) {
+		$this->Plan->id = $id;
+		if ($this->request->is('get')) {
+			$this->request->data = $this->Plan->read();
+		} else {
+			if ($this->Plan->save($this->request->data)) {
+				$this->Session->setFlash('success!');
+				$this->redirect(array('action'=>'index'));
+			} else {
+				$this->Session->setFlash('failed!');
+			}
+		}
+	}
+
 
 }
