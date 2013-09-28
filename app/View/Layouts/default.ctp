@@ -29,12 +29,12 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	<?php
 		echo $this->Html->meta('icon');
 
-/*		echo $this->Html->css('cake.generic');*/
-		echo $this->Html->css('style');
+		echo $this->Html->css('cake.generic');
+/*		echo $this->Html->css('style');
 		if (Configure::read() > 0) {
 			echo $this->Html->css('cake.debug');
 		}
-
+*/
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
@@ -43,7 +43,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 <body>
 	<div id="container">
 		<div id="header">
-			<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>
+			<h1><?php echo $this->Html->link('Home', '/plans'); ?></h1>
 		</div>
 		<div id="content">
 

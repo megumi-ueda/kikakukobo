@@ -13,4 +13,10 @@ class Plan extends AppModel {
  */
 	public $displayField = 'title';
 
+	public $validate = array(
+		'title' =>array(
+			'rule' => 'notEmpty',
+		)
+	);
+
 }
