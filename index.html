@@ -1,0 +1,41 @@
+    <!DOCTYPE HTML>
+    <html lang="ja">
+        <head>
+            <meta charset="UTF-8">
+            <style type="text/css">
+                * {
+                    box-sizing: border-box;
+                }
+     
+                .wrapper {
+                    padding: 30px;
+                    position: relative;
+                } 
+     
+                .box {
+                    position: relative;
+                    background: #ccc;
+                    height: 50px;
+                    width: 100px;
+                    margin-bottom: 20px;
+                }
+     
+                .box:after {
+                    content: '';
+                    position: absolute;
+                    border-top: 10px solid #ccc;
+                    border-right: 5px solid transparent;
+                    border-left: 5px solid transparent;
+                    bottom: -9px;
+                    left: 5px;
+                }
+     
+            </style>
+        </head>
+        <body>
+            <div class="wrapper">
+                <div class="box">
+                </div>
+            </div>
+        </body>
+    </html>
