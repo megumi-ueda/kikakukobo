@@ -24,27 +24,30 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 <head>
 	<?php echo $this->Html->charset("utf-8"); ?>
 	<title>
+		<?php echo $cakeDescription ?>:
 		<?php echo $title_for_layout; ?>
 	</title>
 	<?php
 		echo $this->Html->meta('icon');
 
-//		echo $this->Html->css('cake.generic');
-		echo $this->Html->css('style');
-		if (Configure::read() > 0) {
-			echo $this->Html->css('cake.debug');
-		}
+		echo $this->Html->css('cake.generic');
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 	?>
-	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 </head>
 <body>
 	<div id="container">
 		<div id="header">
-			<h1><?php echo $this->Html->link('Home', '/plans'); ?></h1>
+		<!--	//<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1> -->
+		<?php echo $this->Html->image('find.gif', array('alt' => 'find', 'border' => '0', 'url'=> '/plans/')); ?> 	
+		<?php echo $this->Html->image('add.gif', array('alt' => 'find', 'border' => '0', 'url'=> '/plans/add/')); ?> 
+		<?php echo $this->Html->image('favorite.gif', array('alt' => 'find', 'border' => '0', 'url'=> '/plans/')); ?> 
+		<?php echo $this->Html->image('profile.gif', array('alt' => 'find', 'border' => '0', 'url'=> '/plans/')); ?> 
+		<?php echo $this->Html->image('group.gif', array('alt' => 'find', 'border' => '0', 'url'=> '/plans/')); ?>
+
+
 		</div>
 		<div id="content">
 
@@ -62,12 +65,5 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		</div>
 	</div>
 	<?php echo $this->element('sql_dump'); ?>
-<script>
-$(function() {
-	setTimeout(function() {
-		$('#flashMessage').fadeOut("slow");
-	}, 800);
-});
-</script>
 </body>
 </html>
