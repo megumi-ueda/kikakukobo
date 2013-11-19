@@ -14,7 +14,7 @@ class FacebooksController extends AppController{
   }
 
   public function login(){
-   $this->autoRender = false;
+	$this->autoRender = false;
   
     $url = $this->facebook->getLoginUrl(array('next' => 'http://localhost/facebooks/callback', 'req_perms' => 'email,publish_stream'));
     $this->redirect($url);

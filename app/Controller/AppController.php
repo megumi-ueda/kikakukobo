@@ -32,4 +32,30 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
+	public $facebook;
+    public $helper = array('Html', 'Form', 'Session');
+     
+    function beforeFilter(){
+        App::import('Vendor', 'facebook/src/facebook');
+        $this->facebook = new Facebook( array(
+						'appId' => Configure::read('facebook.appid'),
+						'secret' => Configure::read('facebook.secret'),
+                        'cookie' => true 
+                        ));
+                  
+    }
+     
+    // Facebookで接続するときにOAuthを通す
+    public function authFacebook() {
+        $login_url = $this->facebook->getLoginUrl(array('scope' => 'email,publish_stream,user_birthday,user_education_history,user_likes'));
+        $this->redirect($login_url);
+    }
+     
+    public function connectFb(){
+        $fb = $this->facebook->getUser();
+        if(empty($fb)){
+            $this->authFacebook();
+        }
+        $this->Session->write('Facebook.id', $fb);
+    }
 }

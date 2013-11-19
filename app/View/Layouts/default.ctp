@@ -47,7 +47,6 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		<?php echo $this->Html->image('profile.gif', array('alt' => 'find', 'border' => '0', 'url'=> '/plans/')); ?> 
 		<?php echo $this->Html->image('group.gif', array('alt' => 'find', 'border' => '0', 'url'=> '/plans/')); ?>
 
-
 		</div>
 		<div id="content">
 
